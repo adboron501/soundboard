@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Soundboard</title>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <style>
+        body { font-family: sans-serif; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px; background: #121212; }
+        button { height: 150px; border-radius: 15px; border: none; background: #3498db; color: white; font-size: 1.2rem; font-weight: bold; cursor: pointer; }
+        button:active { background: #2980b9; transform: scale(0.95); }
+    </style>
+</head>
+<body>
+
+    <button onclick="playSound('wow.mp3')">Wow</button>
+    <button onclick="playSound('so cute.mp3')">So Cute</button>
+    <button onclick="playSound('brotha ugh.mp3')">Brotha Ugh</button>
+    <button onclick="playSound('debbie downer.mp3')">Debbie Downer</button>
+    <button onclick="playSound('dun dun dun.mp3')">Dun Dun Dun</button>
+    <button onclick="playSound('emotional damage.mp3')">Emotional Damage</button>
+    <button onclick="playSound('fah.mp3')">Fah</button>
+    <button onclick="playSound('hee hee.mp3')">Hee Hee</button>    
+    <button onclick="playSound('bruh.mp3')">Bruh</button>
+    <button onclick="playSound('oh hell naw.mp3')">Oh Hell Naw</button>
+    <button onclick="playSound('kaboom kablow.mp3')">Kaboom Kablow</button>    
+    <button onclick="playSound('romance.mp3')">Romance</button>
+    <button onclick="playSound('spiderman.mp3')">Spiderman</button>
+    <button onclick="playSound('spongebob fail.mp3')">Fail</button>   
+    <button onclick="playSound('taco bell bong.mp3')">Taco Bell Bong</button>
+    <button onclick="playSound('sad.mp3')">Sad</button>
+    <button onclick="playSound('vine boom.mp3')">Vine Boom</button>    
+    <button onclick="playSound('yippee.mp3')">Yippee</button>
+    
+    <script>
+        function playSound(file) {
+            const audio = new Audio(file);
+            audio.play();
+        }
+    </script>
+</body>
+</html>
