@@ -4,15 +4,110 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Soundboard</title>
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <style>
-        body { font-family: sans-serif; display: grid; grid-template-columns: 1fr 1fr; gap: 20px; padding: 20px; background: #121212; }
-        button { height: 150px; border-radius: 15px; border: none; background: #3498db; color: white; font-size: 1.2rem; font-weight: bold; cursor: pointer; }
-        button:active { background: #2980b9; transform: scale(0.95); }
-    </style>
+   <meta name="apple-mobile-web-app-capable" content="yes">
+
+<style>
+body {
+    font-family: 'Trebuchet MS', sans-serif;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    gap: 10px;
+    padding: 12px;
+    background: #21151f;
+    color: #ffe5f0;
+}
+
+/* 🎀 Girlypop header */
+.soundboard-header {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 22px 10px 16px;
+    background: linear-gradient(135deg, #ffb6d5, #f78fbe, #ffd6e8);
+    border: 2px solid #ffe5f0;
+    border-radius: 20px;
+    box-shadow: 0 0 18px #ff8fc8;
+    color: #672449;
+}
+
+.soundboard-header h1 {
+    margin: 10px 0 6px;
+    font-size: clamp(1.6rem, 6vw, 2.5rem);
+    overflow-wrap: anywhere;
+}
+
+.soundboard-header p {
+    margin: 0;
+    font-size: 0.95rem;
+}
+
+.sparkles {
+    font-size: 1rem;
+}
+
+/* 💗 Now-playing indicator */
+.now-playing {
+    grid-column: 1 / -1;
+    text-align: center;
+    margin: 2px 0 8px;
+    color: #ffc5e0;
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+/* 💅 Pink buttons */
+button {
+    min-height: 65px;
+    padding: 8px;
+    border-radius: 14px;
+    border: 1px solid #ffd5e7;
+    background: #f4a7c5;
+    color: #4a1930;
+    font-size: 0.95rem;
+    font-weight: bold;
+    cursor: pointer;
+    overflow-wrap: anywhere;
+    box-shadow: 0 3px 8px #00000055;
+    transition: transform 0.15s, box-shadow 0.15s;
+}
+
+/* Alternate shades of pink */
+button:nth-of-type(even) {
+    background: #ffcee3;
+}
+
+button:nth-of-type(3n) {
+    background: #e994c4;
+}
+
+/* ✨ Glowing animation for the playing sound */
+button.playing {
+    animation: pink-glow 0.9s ease-in-out infinite alternate;
+    transform: scale(1.03);
+    border-color: white;
+}
+
+@keyframes pink-glow {
+    from {
+        box-shadow: 0 0 6px #ff8fc8;
+    }
+    to {
+        box-shadow: 0 0 20px #ff5eae, 0 0 30px #ffb6d5;
+    }
+}
+
+button:active {
+    transform: scale(0.95);
+}
+   </style> 
 </head>
 <body>
+<header class="soundboard-header">
+    <div class="sparkles">✧･ﾟ: *✧･ﾟ:* 🎀 *:･ﾟ✧*:･ﾟ✧</div>
+    <h1>Girlypop Soundboard</h1>
+    <p>Serving sounds & slaying eardrums 💖</p>
+</header>
 
+<p id="now-playing" class="now-playing">💗 Pick your poison, princess 💗</p>
     <button onclick="playSound('wow.mp3')">Wow</button>
     <button onclick="playSound('so cute.mp3')">So Cute</button>
     <button onclick="playSound('brotha ugh.mp3')">Brotha Ugh</button>
@@ -25,18 +120,92 @@
     <button onclick="playSound('oh hell naw.mp3')">Oh Hell Naw</button>
     <button onclick="playSound('kaboom kablow.mp3')">Kaboom Kablow</button>    
     <button onclick="playSound('romance.mp3')">Romance</button>
-    <button onclick="playSound('spiderman.mp3')">Spiderman</button>
     <button onclick="playSound('spongebob fail.mp3')">Fail</button>   
     <button onclick="playSound('taco bell bong.mp3')">Taco Bell Bong</button>
     <button onclick="playSound('sad.mp3')">Sad</button>
     <button onclick="playSound('vine boom.mp3')">Vine Boom</button>    
     <button onclick="playSound('yippee.mp3')">Yippee</button>
-    
-    <script>
-        function playSound(file) {
-            const audio = new Audio(file);
-            audio.play();
+    <button onclick="playSound('biteof87.mp3')">Bite of 87</button>
+    <button onclick="playSound('stupidtown.mp3')">Stupid Town</button>
+    <button onclick="playSound('hesnaked.mp3')">He's Naked</button>
+    <button onclick="playSound('if-i-were-to-die.mp3')">If I Were to Die</button>
+    <button onclick="playSound('hihowareya.mp3')">Hi How Are Ya</button>
+    <button onclick="playSound('oh-brother-this-guy-stinks.mp3')">Oh Brother</button>
+    <button onclick="playSound('my-leg.mp3')">My Leg</button>
+    <button onclick="playSound('scooby-doo-original-theme.mp3')">Scooby-Doo Original</button>
+    <button onclick="playSound('scooby-dooby-doo.mp3')">Scooby Dooby Doo</button>
+    <button onclick="playSound('scooby-doo-rap-edit.mp3')">Scooby Rap Edit</button>
+    <button onclick="playSound('laugh-track.mp3')">Laugh Track</button>
+    <button onclick="playSound('spiderman-sound.mp3')">Spiderman</button>
+    <button onclick="playSound('its-about-the-mets-baby.mp3')">The Mets</button>
+    <button onclick="playSound('sexy-back.mp3')">Sexy Back</button>
+    <button onclick="playSound('nice-shot.mp3')">Nice Shot</button>
+    <button onclick="playSound('ps2_start_up.mp3')">Ps2</button>
+    <button onclick="playSound('clown-circus-music.mp3')">Circus</button>
+    <button onclick="playSound('alert.mp3')">Alert</button>
+
+  
+<script>
+    let currentAudio = null;
+    let currentButton = null;
+
+    function playSound(file) {
+        // Stop the previous sound
+        if (currentAudio) {
+            currentAudio.pause();
+            currentAudio.currentTime = 0;
         }
-    </script>
+
+        // Remove the previous button's glow
+        if (currentButton) {
+            currentButton.classList.remove("playing");
+        }
+
+        // Find the button that was clicked
+        const button = [...document.querySelectorAll("button")]
+            .find(btn => btn.getAttribute("onclick")?.includes(file));
+
+        currentButton = button || null;
+
+        if (currentButton) {
+            currentButton.classList.add("playing");
+        }
+
+        // Update the now-playing text
+        const indicator = document.getElementById("now-playing");
+        const label = currentButton
+            ? currentButton.textContent.trim()
+            : file;
+
+        indicator.textContent = "🎶 NOW PLAYING: " + label + " 💗";
+
+        // Play the selected sound
+        currentAudio = new Audio(file);
+
+     const audio = currentAudio;
+
+audio.addEventListener("ended", () => {
+    if (currentAudio !== audio) return;
+
+    if (currentButton) {
+        currentButton.classList.remove("playing");
+        currentButton = null;
+    }
+
+    indicator.textContent = "💗 Pick your poison, princess 💗";
+    currentAudio = null;
+});
+
+        currentAudio.play().catch(error => {
+            console.error("Could not play sound:", error);
+            indicator.textContent = "Oops! Couldn't play that sound 💔";
+            if (currentButton) {
+                currentButton.classList.remove("playing");
+                currentButton = null;
+            }
+        });
+    }
+</script>
+
 </body>
 </html>
