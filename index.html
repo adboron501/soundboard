@@ -71,11 +71,13 @@ button {
 }
 
 /* Alternate shades of pink */
-button:nth-of-type(even) {
+button:nth-of-type(4n + 1),
+button:nth-of-type(4n + 4) {
     background: #ffcee3;
 }
 
-button:nth-of-type(3n) {
+button:nth-of-type(4n + 2),
+button:nth-of-type(4n + 3) {
     background: #e994c4;
 }
 
@@ -135,7 +137,7 @@ button:active {
     <button onclick="playSound('scooby-doo-original-theme.mp3')">Scooby-Doo Original</button>
     <button onclick="playSound('scooby-dooby-doo.mp3')">Scooby Dooby Doo</button>
     <button onclick="playSound('scooby-doo-rap-edit.mp3')">Scooby Rap Edit</button>
-    <button onclick="playSound('laugh-track.mp3')">Laugh Track</button>
+    <button onclick="playSound('laugh_track.mp3')">Laugh Track</button>
     <button onclick="playSound('spiderman-sound.mp3')">Spiderman</button>
     <button onclick="playSound('its-about-the-mets-baby.mp3')">The Mets</button>
     <button onclick="playSound('sexy-back.mp3')">Sexy Back</button>
